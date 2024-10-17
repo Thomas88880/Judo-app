@@ -2,6 +2,32 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="static/css/index.css">
+    <script>
+        function validate(event){
+          event.preventDefault();
+
+
+            const username = document.getElementById("playerName").value; //get the user name from input
+            const password = document.getElementById("playerPassword").value; //get the password from input
+    
+            const correctUsername = "Thomas Baumann"; //assigning correct username
+            const correctPassword = "Passw0rd"; //assigning correct password
+    
+            console.log("entered name:",username);
+            console.log("entered password:", password);
+            console.log("expected name:",correctUsername);
+            console.log("expecded password:",correctPassword);
+    
+            if (username === correctUsername & password === correctPassword){
+                window.location.href = "judoDashboard.html";
+            }
+            else{
+                const errorMessageElement = document.getElementById("errorMessage");
+                errorMessageElement.innerText ="You entered an incorrect username or password please try aganin";
+                return false
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -26,20 +52,23 @@
 
 
         <div>
-            <form>
+            <form id="userForm" onsubmit="return validate()">
                 <br> <br> <br> <br> <br>
                 <label for="playerName">Player's Name:</label>
                 <input type="text" name="playerName" id="playerName" placeholder="Enter your player name here">
                 <br><br>
                 <label for="playerPassword">Password: </label>
                 <input type="text" name="playerPassword" id="playerPassword" placeholder="Enter your password">
-
+<p name="errorMessage" id="errorMessage"></p>
                 <br><br>
-                <button name="signIn" id="signIn">Sign-In</button>
+                <button type="submit" name="signIn" id="signIn">Sign-In</button>
                 <br><br>
                 <a href="aboutJudo.html" id="learnaboutjudo">Learn About Judo</a>
 
             </form>
+            <script>
+                document.getElementById("userForm").addEventListener("submit", validate);
+            </script>
         </div>
        
 
@@ -50,5 +79,7 @@
         <footer>Created by Thomas Baumann</footer>
     </div>
 </body>
+
+
 
 </html>
