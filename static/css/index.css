@@ -36,6 +36,7 @@ div {
     text-align: center;
 }
 
+
 .container {
     display: flex;
     align-items: center;
@@ -96,4 +97,7 @@ input::placeholder {
 }
 button#signIn{
     background-color: rgb(5, 141, 252);
+}
+p#errorMessage{
+    color: red;
 }
