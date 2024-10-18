@@ -23,7 +23,7 @@
             }
             else{
                 const errorMessageElement = document.getElementById("errorMessage");
-                errorMessageElement.innerText ="You entered an incorrect username or password please try aganin";
+                errorMessageElement.innerText ="You entered an incorrect username or password please try again";
                 return false
             }
         }
@@ -58,7 +58,7 @@
                 <input type="text" name="playerName" id="playerName" placeholder="Enter your player name here">
                 <br><br>
                 <label for="playerPassword">Password: </label>
-                <input type="text" name="playerPassword" id="playerPassword" placeholder="Enter your password">
+                <input type="password" name="playerPassword" id="playerPassword" placeholder="Enter your password">
 <p name="errorMessage" id="errorMessage"></p>
                 <br><br>
                 <button type="submit" name="signIn" id="signIn">Sign-In</button>
